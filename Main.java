@@ -52,8 +52,13 @@ class Main {
 				blah = in.nextLine();
 				newname = in.nextLine();
 				if (newname.equals("y")){
-					inventoryList.remove(newnum);
-					System.out.println("It has been removed.");
+					if (newnum < inventoryList.size() && newnum >= 0) {
+						inventoryList.remove(newnum);
+						System.out.println("It has been removed.");
+					}
+					else {
+						System.out.println("Sorry! This item doesn't exist.");
+					}
 				}
 				break;
 			case (4):
