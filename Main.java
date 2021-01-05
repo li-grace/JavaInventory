@@ -49,7 +49,7 @@ class Main {
 				newnum = in.nextInt();
 				newnum--;
 				System.out.printf("Are you sure you want to delete ");
-				inventoryList.get(newnum).print();
+				inventoryList.getData(newnum).print();
 				System.out.printf("? y or n: \n");
 				blah = in.nextLine();
 				newname = in.nextLine();
