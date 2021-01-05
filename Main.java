@@ -5,7 +5,8 @@ class Main {
   public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);
-		ArrayList<Data> inventoryList = new ArrayList<Data>();
+		List inventoryList = new List();
+		//ArrayList<Data> inventoryList = new ArrayList<Data>();
 		String blah, newname, newbrand;
 		int newnum;
 
@@ -31,16 +32,17 @@ class Main {
 				newnum = in.nextInt();
 
 				Data newEntry = new Data(newname, newbrand, newnum);
-				inventoryList.add(newEntry);
+				inventoryList.append(newEntry);
 				break;
 
 			case (2):
-				int total = inventoryList.size();
-				System.out.printf("Displaying all %d items:\n",total);
+				//int total = inventoryList.size();
+				/*System.out.printf("Displaying all %d items:\n",inventoryList.getSize());
 				for (int i = 0; i < total; i++) {
 					System.out.printf("%d. ",i+1);
 					inventoryList.get(i).print();
-				}
+				}*/
+				inventoryList.print();
 				break;
 			case (3):
 				System.out.print("Enter the number of the entry you wish to delete: ");
@@ -52,13 +54,14 @@ class Main {
 				blah = in.nextLine();
 				newname = in.nextLine();
 				if (newname.equals("y")){
-					if (newnum < inventoryList.size() && newnum >= 0) {
+					/*if (newnum < inventoryList.size() && newnum >= 0) {
 						inventoryList.remove(newnum);
 						System.out.println("It has been removed.");
 					}
 					else {
 						System.out.println("Sorry! This item doesn't exist.");
-					}
+					}*/
+					inventoryList.delete(newnum);
 				}
 				break;
 			case (4):
